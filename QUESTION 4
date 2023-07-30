@@ -1,0 +1,8 @@
+def string_length_recursive(s):
+    if not s:
+        return 0
+    return 1 + string_length_recursive(s[1:])
+
+# Examples
+print(string_length_recursive("abcd"))  # Output: 4
+print(string_length_recursive("GEEKSFORGEEKS"))  # Output: 13

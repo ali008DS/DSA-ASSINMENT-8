@@ -1,0 +1,12 @@
+def permutations(s, left, right):
+    if left == right:
+        print(''.join(s), end=" ")
+    else:
+        for i in range(left, right + 1):
+            s[left], s[i] = s[i], s[left]
+            permutations(s, left + 1, right)
+            s[left], s[i] = s[i], s[left]  # Backtrack
+
+# Examples
+permutations(list("cd"))   # Output: cd dc
+permutations(list("abb"))  # Output: abb abb bab bba bab bba

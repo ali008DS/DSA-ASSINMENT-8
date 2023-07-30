@@ -1,0 +1,19 @@
+def last_remaining(n):
+    left_to_right = True
+    remaining = n
+    step = 1
+    head = 1
+
+    while remaining > 1:
+        if left_to_right or remaining % 2 == 1:
+            head += step
+
+        remaining //= 2
+        step *= 2
+        left_to_right = not left_to_right
+
+    return head
+
+# Examples
+print(last_remaining(9))  # Output: 6
+print(last_remaining(1))  # Output: 1

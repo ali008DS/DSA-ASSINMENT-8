@@ -1,0 +1,11 @@
+def subsets(s, current="", index=0):
+    if index == len(s):
+        print(f"{current}", end=" ")
+        return
+
+    subsets(s, current, index + 1)
+    subsets(s, current + s[index], index + 1)
+
+# Examples
+subsets("abc")  # Output:  "" "a" "c" "ac" "b" "bc" "ab" "abc"
+subsets("abcd")  # Output: "" "a" "d" "ad" "c" "ac" "cd" "acd" "b" "ab" "bd" "abd" "bc" "abc" "bcd" "abcd"
